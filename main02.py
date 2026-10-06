@@ -4,7 +4,7 @@ from model.gerar_problema import gerar_problema, gerar_problema_binario
 from model.gerar_marmita_inicial import gerar_marmita_inicial
 from model.gerar_sucessor import gerar_sucessor
 from model.calcular_metricas import calcular_metricas
-
+from model.subida_encosta import subida_encosta_por_tentativas
 
 def dados_sucessor(lista_porcoes, catalogo):
 
@@ -191,3 +191,20 @@ while True:
         )
 
         break
+
+    from model.subida_encosta import subida_encosta_por_tentativas
+
+# Confirme os nomes exatos das funções dentro destes arquivos do seu amigo:
+from model.gerar_solucao_inicial import gerar_inicial 
+from model.gerar_sucessor import gerar_sucessores
+from model.calcular_metricas import calcular_pontuacao 
+
+# Rodando o algoritmo com 10 tentativas de subida da encosta
+melhor_marmita = subida_encosta_por_tentativas(
+    num_tentativas=10, 
+    gerar_inicial=gerar_inicial, 
+    gerar_sucessores=gerar_sucessores, 
+    calcular_pontuacao=calcular_pontuacao
+)
+
+print("A melhor combinação de marmita encontrada foi:", melhor_marmita)
